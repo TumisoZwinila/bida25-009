@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terravast Land Market Place</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- navbar -->
      <nav class="navbar">
-     <div class="logo">
-        <img src="Terravast\images\logo.jpeg" alt="Logo">
-     <a href="#">
+     <div class="logo area">
+        <a href="index.html" class="logo text">
+            <img src="images\logo.jpeg" alt="Terravast Logo" class="logo image"
+                     width="250" 
+                     height="80"
+                     class="logo-image">
+            </a>
+        </div>
             <h2>Terravast</h2>  
      </a>
      </div>
@@ -52,6 +58,155 @@
         </ul>
     </div>
 </header>
-            
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Buy · Sell · Invest in Land Across Botswana</h1>
+            <p>Connecting verified land buyers and sellers with secure, transparent transactions.</p>
+            <div class="hero buttons">
+                <a href="listings.html" class="btn-primary">Browse Listings</a>
+                <a href="contact.html" class="btn-outline">List Your Land</a>
+            </div>
+        </div>
+         <div class="hero-stats">
+                <div class="stat-card">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h3>100%</h3>
+                    <p>Verified Listings</p>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-globe2"></i>
+                    <h3>Nationwide</h3>
+                    <p>Across Botswana</p>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>Secure</h3>
+                    <p>Transactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <h2>Verified Listings</h2>
+            <p>All properties are verified for authenticity and legal compliance.</p>
+        </div>
+        <div class="feature">
+            <h2>We sell and buy land</h2>
+            <p>Connect with verified sellers and buyers for a secure transaction.</p>
+        </div>
+        <div class="feature">
+         <h2>Nationwide Coverage</h2>
+            <p>From Gaborone  to remote villages, we operate across Botswana.</p>
+        </div>
+    </section>
+    <section class="search section">
+        <div class="container">
+            <div class="search card">
+                <h2>Find Your Perfect Land in Botswana</h2>
+                <form id="search form" class="search form">
+                    <div class="form group">
+                        <label> District/ Village</label>
+                        <input type="text" placeholder="e.g Gaborone, Francistown, Maun">
+                    </div>
+                    <div class="form group">
+                        <label>Land Type</label>
+                        <select id="searchType">
+                            <option value="">Select Land Type</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="tribal">Tribal Land</option>
+                            <option value="freehold">Freehold</option>
+                        </select>
+                    </div>
+                    <div class="form group">
+                        <label>Price Range</label>
+                        <select id="searchPrice">
+                            <option value="any">Any Price</option>
+                            <option value="0-300000">Under P300,000</option>
+                            <option value="300001-600000">P300k - P600k</option>
+                            <option value="600001-1000000">P600k - P1M</option>
+                            <option value="1000001+">P1M+</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-search">Search Properties<i class="bi bi-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="featured listings">
+        <div class="container">
+            <div class="section header">
+                <h2>Featured Listings</h2>
+                <p>Our platform simplifies land transactions with a secure, transparent process.</p>
+            </div>
+            <div class="listings grid" id="featuredListingsGrid">
+
+            </div>
+                <div class="view-all-wrap">
+                    <a href="listings.html" class="btn-outline">View All Listings</a>
+                </div>
+            </div>
+    </section>
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Simple. Secure. Structured.</h2>
+            <p>How It Works</p>
+        </div>
+            <div class="steps">
+                <div class="step">
+                    <i class="step-num"></i>
+                    <h3>List Your Land</h3>
+                    <p>Sellers can list their land for sale on our platform.</p>
+                </div>
+                <div class="step">
+                    <i class="step-num"></i>
+                    <h3>Connect</h3>
+                    <p>Get in touch with verified sellers and buyers.</p>
+                </div>
+                <div class="step">
+                    <i class="step-num"></i>
+                    <h3>Seamless Transactions</h3>
+                    <p>Complete the transaction securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3> TERRAVAST HOLDINGS PTY LTD</h3>
+                    <p>Terravast is Botswana's premier online land marketplace, connecting verified buyers and sellers for secure, transparent transactions across the country.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listings.html">Listings</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="bi bi-geo-alt"></i> Gaborone, Botswana</p>
+                    <p><i class="bi bi-envelope"></i> info@terravast.com</p>
+                    <p><i class="bi bi-telephone"></i> Phone: +267 390 1234</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Terravast Holdings Pty Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
