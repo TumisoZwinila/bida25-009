@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Land - Terravast</title>
+</head>
+<body>
+    <header class="header">
+    <div class="header-container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" width="150" height="100"   >
+        </a>
+        
+        <nav class="navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </div>
+     </a>
+     </div>
+
+
+<div id="form-section">
+    <h1>List Your Land</h1>
+    
+    <form action="#acknowledgement" method="get">
+        <label for="title">Property Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="price">Price (BWP):</label><br>
+        <input type="number" id="price" name="price" required><br><br>
+
+        <label for="size">Land Size (m²):</label><br>
+        <input type="text" id="size" name="size" required><br><br>
+
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label>Phone Number:</label><br>
+    <input type="tel" required><br><br>
+
+        <button type="submit">Submit Listing</button>
+    </form>
+</div>
+
+<div id="acknowledgement">
+    <h2>✓ Thank You!</h2>
+    <p>Your land listing has been submitted successfully.</p>
+    <p>We will review your listing and contact you within 24 hours.</p>
+    <br>
+    <a href="list-land.html">List Another Property</a><br><br>
+    <a href="index.html">Return to Home</a>
+</div>
+
+</body>
+</html>

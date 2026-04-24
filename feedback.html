@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terravast - Feedback</title>
+</head>
+<body>
+
+    <header class="header">
+    <div class="header-container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" width="150" height="100"   >
+        </a>
+        
+        <nav class="navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </div>
+     </a>
+     </div>
+
+    <main>
+        <section>
+            <h1>We Value Your Feedback</h1>
+            <p>Help us improve Terravast by sharing your experience.</p>
+
+            <!-- Feedback form submits to acknowledgement.html -->
+            <form action="acknowledgement.html" method="GET">
+                <div>
+                    <label>Your Full Name *</label>
+                    <input type="text" name="fullname" required>
+                </div>
+
+                <div>
+                    <label>Email Address *</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div>
+                    <label>How would you rate your experience?</label>
+                    <select name="rating">
+                        <option>★★★★★ - Excellent</option>
+                        <option>★★★★☆ - Good</option>
+                        <option>★★★☆☆ - Average</option>
+                        <option>★★☆☆☆ - Fair</option>
+                        <option>★☆☆☆☆ - Poor</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Your Feedback *</label>
+                    <textarea name="message" rows="5" required placeholder="Tell us what you think..."></textarea>
+                </div>
+
+                <button type="submit">Submit Feedback</button>
+                <p>* Required fields</p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
