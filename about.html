@@ -3,69 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terravast - About Us</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-     <link rel="stylesheet" href="style.css">   
+    <title>Terravast - About Us | Botswana's Trusted Land Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- <header class="site-header">
+<header class="site-header">
     <div class="container nav-container">
-        <div class="logo">
-            <img src="images/logo.jpeg" alt="Terravast Logo" width="150" height="100">
+        <div class="logo-area">
+            <h1 class="logo"><span class="logo-terra">TERRAVAST</span> <span class="logo-hold">HOLDINGS</span><br><span class="logo-sub">PTY LTD</span></h1>
         </div>
-        
-        <div class="nav-wrapper">
-            <ul class="nav-menu">
+        <nav class="main-nav">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="feedback.html">Feedback</a></li>
-                <li class="list-land-btn"><a href="listyourlandform.html" class="btn-primary">List Your Land</a></li>
             </ul>
-        </div>
+            <div class="nav-actions">
+                <a href="listings.html" class="btn-outline">Browse Properties</a>
+                <a href="contact.html" class="btn-primary">List Your Land</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="bi bi-list"></i></button>
+        </nav>
+    </div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="listings.html">Listings</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
     </div>
 </header>
-   
 
-    <main>
-        <section>
-            <h1>About Terravast Holdings</h1>
-            <p>Connecting verified land buyers and sellers nationwide with secure, transparent transactions.</p>
-        </section>
-
-        <section>
-            <div>
-                <h2>Our Vision</h2>
+<main>
+    <section class="container" style="padding: 3rem 1.5rem;">
+        <!-- Hero section for about page -->
+        <div style="background: #0a2e2b; color: white; border-radius: 32px; padding: 3rem 2rem; margin-bottom: 3rem; text-align: center;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">About Terravast Holdings</h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Connecting verified land buyers and sellers nationwide with secure, transparent transactions.</p>
+        </div>
+        
+        <!-- Vision and Mission side by side -->
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
+            <div style="flex: 1; background: #f5f2ed; padding: 2rem; border-radius: 24px;">
+                <i class="bi bi-eye-fill" style="font-size: 2.5rem; color: #f9b23f;"></i>
+                <h2 style="margin: 1rem 0 0.5rem;">Our Vision</h2>
                 <p>To become Botswana's most trusted digital land marketplace, empowering property ownership and investment for every Motswana.</p>
             </div>
-            <div>
-                <h2>Our Mission</h2>
+            <div style="flex: 1; background: #f5f2ed; padding: 2rem; border-radius: 24px;">
+                <i class="bi bi-bullseye" style="font-size: 2.5rem; color: #f9b23f;"></i>
+                <h2 style="margin: 1rem 0 0.5rem;">Our Mission</h2>
                 <p>Provide a secure, structured platform that simplifies land transactions, ensures transparency, and boosts real estate growth nationwide.</p>
             </div>
-        </section>
-
-        <section>
-            <h2>Why Choose Us</h2>
-            <ul>
-                <li>Verified Listings – All properties reviewed before publication</li>
-                <li>Nationwide Coverage – From Gaborone to remote villages</li>
-                <li>Direct Purchase Options – We buy and sell land directly</li>
-                <li>Legal & Ownership Verification – Secure documentation process</li>
-                <li>Dedicated Support Team – Helping you at every step</li>
-            </ul>
-        </section>
-
-        <section>
+        </div>
+        
+        <!-- Why Choose Us section -->
+        <div style="margin-bottom: 3rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Why Choose Terravast?</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+                <div style="background: white; padding: 1rem 1.5rem; border-radius: 60px; border: 1px solid #e0d6c8;">✅ Verified Listings</div>
+                <div style="background: white; padding: 1rem 1.5rem; border-radius: 60px; border: 1px solid #e0d6c8;">📍 Nationwide Coverage</div>
+                <div style="background: white; padding: 1rem 1.5rem; border-radius: 60px; border: 1px solid #e0d6c8;">💰 Direct Purchase Options</div>
+                <div style="background: white; padding: 1rem 1.5rem; border-radius: 60px; border: 1px solid #e0d6c8;">📋 Legal & Ownership Verification</div>
+                <div style="background: white; padding: 1rem 1.5rem; border-radius: 60px; border: 1px solid #e0d6c8;">🤝 Dedicated Support Team</div>
+            </div>
+        </div>
+        
+        <!-- Company story -->
+        <div style="background: #f9f5ef; border-radius: 24px; padding: 2rem;">
             <h2>Our Story</h2>
-            <p><strong>Founded in 2026</strong>, Terravast Holdings Pty Ltd emerged from a simple observation: buying and selling land in Botswana was fragmented and lacked trust. We built a digital platform that brings transparency, verification, and nationwide reach to the land market. Today, we connect thousands of buyers and sellers across all districts.</p>
-        </section>
-    </main>
+            <p>Founded in 2024, Terravast Holdings Pty Ltd emerged from a simple observation: buying and selling land in Botswana was fragmented and lacked trust. We built a digital platform that brings transparency, verification, and nationwide reach to the land market. Today, we connect thousands of buyers and sellers across all districts.</p>
+        </div>
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
-    </footer>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>TERRAVAST HOLDINGS PTY LTD</h3>
+                <p>Your trusted partner in land transactions across Botswana.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul><li><a href="index.html">Home</a></li><li><a href="listings.html">Listings</a></li><li><a href="contact.html">Contact</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Terravast Holdings Pty Ltd.</p></div>
+    </div>
+</footer>
 
+<script src="script.js"></script>
 </body>
 </html>
