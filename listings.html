@@ -4,47 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terravast - All Land Listings in Botswana</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-       <header class="header">
-    <div class="header-container">
-        <a href="index.html" class="logo">
-            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" width="150" height="100"   >
-        </a>
+<header class="site-header">
+    <div class="container nav-container">
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="Terravast Logo" width="150" height="100">
+        </div>
         
-        <nav class="navigation">
+        <div class="nav-wrapper">
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="feedback.html">Feedback</a></li>
+                <li class="list-land-btn"><a href="listyourlandform.html" class="btn-primary">List Your Land</a></li>
             </ul>
-        </nav>
-    </div>
-     </a>
-     </div>
-            <div class="nav-actions">
-                <a href="contact.html" class="btn-primary">List Your Land</a>
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-                <i class="bi bi-list"></i>
-            </button>
-        </nav>
+        </div>
     </div>
 </header>
 
     <main>
         <h1>All Land Listings in Botswana</h1>
         <p>Browse verified properties across the country</p>
+<div class="filter-bar">
+    <label>Filter by location:</label>
+    <input type="text" id="filterLocationInput" placeholder="Enter district or village">
+    <button type="button" onclick="filterListingsByLocation()">Apply Filter</button>
+    <button type="button" onclick="resetFilters()" style="background:#aaa;">Reset</button>
+    <span id="resultsCount" style="margin-left:15px; color:#8b7355; font-weight:bold;"></span>
+</div>
 
-        <form>
-            <label>Filter by location:</label>
-            <input type="text" placeholder="Enter district or village">
-            <button type="submit">Apply Filter</button>
-        </form>
+<div class="listings-grid" id="listingsGrid">
+    <!-- Your article elements go here, add class="listing-card" to each -->
+</div>
 
         <section>
             <article>
@@ -108,6 +105,6 @@
     <footer>
         <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
     </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
