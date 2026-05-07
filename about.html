@@ -13,23 +13,30 @@
 <header class="site-header">
     <div class="container nav-container">
         <div class="logo-area">
-            <h1 class="logo"><span class="logo-terra">TERRAVAST</span> <span class="logo-hold">HOLDINGS</span><br><span class="logo-sub">PTY LTD</span></h1>
+            <h1 class="logo">
+                <span class="logo-terra">TERRAVAST</span> 
+                <span class="logo-hold">HOLDINGS</span>
+                <br><span class="logo-sub">PTY LTD</span>
+            </h1>
         </div>
         <nav class="main-nav">
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="feedback.html">Feedback</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="listings.html" class="btn-outline">Browse Properties</a>
                 <a href="contact.html" class="btn-primary">List Your Land</a>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="bi bi-list"></i></button>
+            <!-- Mobile menu button (hamburger) - only shows on phones -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <i class="bi bi-list"></i>
+            </button>
         </nav>
     </div>
+    <!-- Mobile navigation panel - hidden by default, shows when button clicked -->
     <div class="mobile-nav-panel" id="mobileNavPanel">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -37,10 +44,10 @@
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contact.html" class="btn-primary-mobile">List Your Land</a></li>
         </ul>
     </div>
 </header>
-
 <main>
     <section class="container" style="padding: 3rem 1.5rem;">
         <!-- Hero section for about page -->
