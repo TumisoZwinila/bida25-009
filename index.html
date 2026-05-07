@@ -3,201 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terravast - All Land Listings in Botswana</title>
+    <title>Terravast Land Market Place</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-
-<header class="site-header">
-    <div class="container nav-container">
-        <div class="logo">
-            <img src="images/logo.jpeg" alt="Terravast Logo" width="150" height="100">
-        </div>
-        <nav class="navigation">
+   <header class="header">
+    <div class="header-container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" width="150" height="100">
+        </a>
+        
+        <div class="nav-wrapper">
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="listings.html" class="active">Listings</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="listings.html">Listings</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="feedback.html">Feedback</a></li>
-                <li><a href="listyourlandform.html">List Your Land</a></li>
+                <li class="list-land-btn"><a href="listyourlandform.html" class="btn-primary">List Your Land</a></li>
             </ul>
-        </nav>
+        </div>
     </div>
 </header>
-
-<section class="hero-slideshow">
-    <div class="slideshow-bg">
-        <div class="slide active" style="background-image: url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/162539/architecture-building-city-urban-162539.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
-        <div class="slide" style="background-image: url('https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+<main>
+   <section class="hero">
+    <div class="slideshow-container">
+        <div class="slide slide1 active"></div>
+        <div class="slide slide2"></div>
+        <div class="slide slide3"></div>
+        
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        
+        <div class="slide-controls">
+            <div class="dot" onclick="currentSlide(1)"></div>
+            <div class="dot" onclick="currentSlide(2)"></div>
+            <div class="dot" onclick="currentSlide(3)"></div>
+        </div>
     </div>
-    <div class="hero-content-overlay">
-        <h1>All Land Listings in Botswana</h1>
-        <p>Browse verified properties across the country</p>
+    
+    <div class="hero-content">
+        <h1>Buy · Sell · Invest in Land Across Botswana</h1>
+        <p>Connecting verified land buyers and sellers with secure, transparent transactions.</p>
+    </div>
+    
+    <div class="hero-stats">
+        <div class="stat-card">
+            <h3>100%</h3>
+            <p>Verified Listings</p>
+        </div>
+        <div class="stat-card">
+            <h3>Nationwide</h3>
+            <p>Across Botswana</p>
+        </div>
+        <div class="stat-card">
+            <h3>Secure</h3>
+            <p>Transactions</p>
+        </div>
     </div>
 </section>
-
-<div class="filter-section">
-    <div class="filter-header">
-        <h3><i class="bi bi-funnel-fill"></i> Filter Properties</h3>
-    </div>
-    <div class="filter-form">
-        <div class="filter-group">
-            <label>District / Village</label>
-            <input type="text" id="filterLocation" placeholder="e.g., Gaborone, Maun, Francistown">
+    <section class="features">
+        <div class="feature">
+            <h2>Verified Listings</h2>
+            <p>All properties are verified for authenticity and legal compliance.</p>
         </div>
-        <div class="filter-group">
-            <label>Land Type</label>
-            <select id="filterType">
-                <option value="all">All Types</option>
-                <option value="Residential">Residential</option>
-                <option value="Commercial">Commercial</option>
-                <option value="Agricultural">Agricultural</option>
-                <option value="Tribal">Tribal Land</option>
-                <option value="Freehold">Freehold</option>
-            </select>
+        <div class="feature">
+            <h2>We sell and buy land</h2>
+            <p>Connect with verified sellers and buyers for a secure transaction.</p>
         </div>
-        <div class="filter-group">
-            <label>Price Range (BWP)</label>
-            <select id="filterPrice">
-                <option value="any">Any Price</option>
-                <option value="0-300000">Under P300,000</option>
-                <option value="300001-600000">P300k - P600k</option>
-                <option value="600001-1000000">P600k - P1M</option>
-                <option value="1000001+">P1M+</option>
-            </select>
+        <div class="feature">
+         <h2>Nationwide Coverage</h2>
+            <p>From Gaborone  to remote villages, we operate across Botswana.</p>
         </div>
-        <div class="filter-actions">
-            <button id="applyFiltersBtn" class="btn-primary">Apply Filters</button>
-            <button id="resetFiltersBtn" class="btn-secondary">Reset</button>
-        </div>
-    </div>
-    <div class="filter-stats">Showing <span id="resultsCount">8</span> properties</div>
-</div>
-
-<main>
+    </section>
+    
+    <section class="search section">
     <div class="container">
-        <div class="listings-container" id="listingsContainer">
-            <!-- Property cards will be dynamically inserted -->
-        </div>
-        <div id="noResultsMsg" class="no-results" style="display: none;">
-            <h3>No matching properties</h3>
-            <p>Try adjusting your filters</p>
-            <button id="clearFiltersBtn" class="btn-primary">Reset Filters</button>
+        <div class="search card">
+            <h2>Find Your Perfect Land in Botswana</h2>
+            <form id="searchForm" class="search form" onsubmit="return false;">
+                <div class="form group">
+                    <label>District/Village</label>
+                    <input type="text" id="searchDistrict" placeholder="e.g Gaborone, Francistown, Maun">
+                </div>
+                <div class="form group">
+                    <label>Land Type</label>
+                    <select id="searchType">
+                        <option value="">Select Land Type</option>
+                        <option value="residential">Residential</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="tribal">Tribal Land</option>
+                        <option value="freehold">Freehold</option>
+                        <option value="agricultural">Agricultural</option>
+                    </select>
+                </div>
+                <div class="form group">
+                    <label>Price Range</label>
+                    <select id="searchPrice">
+                        <option value="any">Any Price</option>
+                        <option value="0-300000">Under P300,000</option>
+                        <option value="300001-600000">P300k - P600k</option>
+                        <option value="600001-1000000">P600k - P1M</option>
+                        <option value="1000001+">P1M+</option>
+                    </select>
+                </div>
+                <button type="button" class="btn-search" onclick="performSearch()">Search Properties</button>
+            </form>
+            <div id="searchResultsMessage" style="margin-top:15px; text-align:center;"></div>
         </div>
     </div>
-</main>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
-    </div>
-</footer>
-
-<script>
-const properties = [
-    { id: 1, title: "Residential Plot", location: "Gaborone", price: 300000, size: "500m²", type: "Residential", img: "images/Gaborone.jpg", desc: "A plot located in a good location in Gaborone, surrounded by G-north estates ensuring safety for residents, freehold. Contact: 📞 +267 71 234 567" },
-    { id: 2, title: "Commercial Farmland", location: "Maun", price: 850000, size: "3500m²", type: "Commercial", img: "images/Maun.jpg", desc: "A plot located in a good location in Maun, with access to water and infrastructure. Contact: 📞 +267 74 223 763" },
-    { id: 3, title: "Agricultural Land", location: "Mahalapye", price: 2700000, size: "20000m²", type: "Agricultural", img: "images/Mahalapye.jpg", desc: "Fertile soil, fenced, water rights. Contact: 📞 +267 71 506 870" },
-    { id: 4, title: "Tribal Residential", location: "Mochudi", price: 450000, size: "3000m²", type: "Tribal", img: "images/Mochudi.jpg", desc: "Tribal land, services available. Contact: 📞 +267 71 631 517" },
-    { id: 5, title: "Commercial Stand", location: "Francistown", price: 1200000, size: "2500m²", type: "Commercial", img: "images/Francistown.jpg", desc: "High visibility, commercial zone. Contact: 📞 +267 76 760 666" },
-    { id: 6, title: "Freehold Plot", location: "Kasane", price: 2100000, size: "5000m²", type: "Freehold", img: "images/Kasane.jpg", desc: "Near Chobe, tourism potential. Contact: 📞 +267 74 620 444" },
-    { id: 7, title: "Residential Plot", location: "Lobatse", price: 350000, size: "600m²", type: "Residential", img: "images/Lobatse.jpg", desc: "Quiet area, affordable. Contact: 📞 +267 76 750 167" },
-    { id: 8, title: "Commercial Farm", location: "Ghanzi", price: 1800000, size: "15000m²", type: "Commercial", img: "images/Ghanzi.jpg", desc: "Cattle/game farming, borehole. Contact: 📞 +267 77 217 480" }
-];
-
-function formatPrice(price) {
-    return "P" + price.toLocaleString();
-}
-
-function renderListings(filteredProperties) {
-    const container = document.getElementById('listingsContainer');
-    const noResults = document.getElementById('noResultsMsg');
-    const resultsSpan = document.getElementById('resultsCount');
-    
-    if (filteredProperties.length === 0) {
-        container.innerHTML = '';
-        noResults.style.display = 'block';
-        resultsSpan.innerText = '0';
-        return;
-    }
-    
-    noResults.style.display = 'none';
-    resultsSpan.innerText = filteredProperties.length;
-    
-    container.innerHTML = filteredProperties.map(prop => `
-        <article class="listing-card">
-            <div class="card-img-wrapper">
-                <img src="${prop.img}" alt="${prop.title}" onerror="this.src='https://placehold.co/600x400?text=Land+Image'">
+</section>
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Simple. Secure. Structured.</h2>
+            <p>How It Works</p>
+        </div>
+            <div class="steps">
+                <div class="step">
+                    <i class="step-num"></i>
+                    <h3>List Your Land</h3>
+                    <p>Sellers can list their land for sale on our platform.</p>
+                </div>
+                <div class="step">
+                    <i class="step-num"></i>
+                    <h3>Connect</h3>
+                    <p>Get in touch with verified sellers and buyers.</p>
+                </div>
+                <div class="step">
+                    <i class="step-num"></i>
+                    <h3>Seamless Transactions</h3>
+                    <p>Complete the transaction securely.</p>
+                </div>
             </div>
-            <div class="listing-content">
-                <div class="listing-badge">${prop.type}</div>
-                <h3>${prop.title}</h3>
-                <p class="location"><i class="bi bi-pin-map-fill"></i> ${prop.location} • ${formatPrice(prop.price)} • ${prop.size}</p>
-                <details>
-                    <summary>VIEW DETAILS</summary>
-                    <p>${prop.desc}</p>
-                </details>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
             </div>
-        </article>
-    `).join('');
-}
-
-function applyFilters() {
-    const locationVal = document.getElementById('filterLocation').value.toLowerCase().trim();
-    const typeVal = document.getElementById('filterType').value;
-    const priceVal = document.getElementById('filterPrice').value;
-    
-    const filtered = properties.filter(prop => {
-        let match = true;
-        
-        if (locationVal && !prop.location.toLowerCase().includes(locationVal)) match = false;
-        if (typeVal !== 'all' && prop.type !== typeVal) match = false;
-        
-        if (priceVal !== 'any') {
-            if (priceVal === '0-300000' && prop.price > 300000) match = false;
-            else if (priceVal === '300001-600000' && (prop.price < 300001 || prop.price > 600000)) match = false;
-            else if (priceVal === '600001-1000000' && (prop.price < 600001 || prop.price > 1000000)) match = false;
-            else if (priceVal === '1000001+' && prop.price < 1000001) match = false;
-        }
-        
-        return match;
-    });
-    
-    renderListings(filtered);
-}
-
-function resetFilters() {
-    document.getElementById('filterLocation').value = '';
-    document.getElementById('filterType').value = 'all';
-    document.getElementById('filterPrice').value = 'any';
-    renderListings(properties);
-}
-
-
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-if (slides.length) {
-    setInterval(() => {
-        slides[slideIndex].classList.remove('active');
-        slideIndex = (slideIndex + 1) % slides.length;
-        slides[slideIndex].classList.add('active');
-    }, 5000);
-}
-
-
-document.getElementById('applyFiltersBtn').addEventListener('click', applyFilters);
-document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters);
-document.getElementById('clearFiltersBtn')?.addEventListener('click', resetFilters);
-document.getElementById('filterLocation').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') applyFilters();
-});
-
-renderListings(properties);
-</script>
-
+        </div>
+    </footer>
 </body>
 </html>
