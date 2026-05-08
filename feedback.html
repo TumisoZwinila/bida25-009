@@ -2,74 +2,499 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terravast - Feedback</title>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Terravast - Feedback | Share Your Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional mobile-responsive styles for feedback page */
+        .feedback-page-main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        .feedback-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .feedback-header h1 {
+            color: #2d4a2c;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feedback-header p {
+            color: #5a3d2b;
+            font-size: 1.1rem;
+        }
+        
+        .feedback-form-container {
+            background: #fff8f0;
+            padding: 2.5rem;
+            border-radius: 28px;
+            border: 1px solid #e0d6c8;
+            box-shadow: 0 10px 30px rgba(61, 43, 26, 0.08);
+        }
+        
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: #2d4a2c;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .form-group label .required {
+            color: #e74c3c;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 16px;
+            border: 2px solid #e0d6c8;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c9a03d;
+            box-shadow: 0 0 0 3px rgba(201, 160, 61, 0.2);
+        }
+        
+        /* Star Rating Styles */
+        .rating-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .stars {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .star {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #ddd;
+            transition: all 0.2s;
+        }
+        
+        .star:hover,
+        .star.active,
+        .star.selected {
+            color: #f9b23f;
+            text-shadow: 0 0 2px rgba(249, 178, 63, 0.5);
+        }
+        
+        .rating-value {
+            font-size: 0.85rem;
+            color: #5a3d2b;
+            margin-top: 0.25rem;
+        }
+        
+        .rating-value span {
+            font-weight: bold;
+            color: #f9b23f;
+        }
+        
+        /* Feedback type quick buttons */
+        .feedback-types {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 0.25rem;
+        }
+        
+        .feedback-type-btn {
+            background: #f0e6d2;
+            border: 1px solid #e0d6c8;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .feedback-type-btn:hover,
+        .feedback-type-btn.active {
+            background: #c9a03d;
+            color: white;
+            border-color: #c9a03d;
+        }
+        
+        .submit-btn {
+            background: #2d4a2c;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 0.5rem;
+        }
+        
+        .submit-btn:hover {
+            background: #c9a03d;
+            color: #2d4a2c;
+            transform: translateY(-2px);
+        }
+        
+        .required-note {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+        
+        /* Testimonials section */
+        .testimonials-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0d6c8;
+        }
+        
+        .testimonials-section h3 {
+            text-align: center;
+            color: #2d4a2c;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #e0d6c8;
+        }
+        
+        .testimonial-card .stars-mini {
+            color: #f9b23f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-card p {
+            color: #5a3d2b;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-card h4 {
+            color: #2d4a2c;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .feedback-page-main {
+                padding: 2rem 1rem;
+            }
+            
+            .feedback-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .feedback-header p {
+                font-size: 1rem;
+            }
+            
+            .feedback-form-container {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+            
+            .star {
+                font-size: 1.5rem;
+            }
+            
+            .feedback-types {
+                gap: 0.5rem;
+            }
+            
+            .feedback-type-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .submit-btn {
+                width: 100%;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .star {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="header">
+<header class="header">
     <div class="header-container">
+        <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
         <a href="index.html" class="logo">
-            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" width="150" height="100"   >
+            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x60?text=Terravast'">
         </a>
         
-        <nav class="navigation">
+        <div class="nav-wrapper">
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+                <li class="list-land-btn"><a href="listyourlandform.html" class="btn-primary">List Your Land</a></li>
             </ul>
-        </nav>
+        </div>
     </div>
-     </a>
-     </div>
+</header>
 
-    <main>
-        <section>
+<main>
+    <div class="feedback-page-main">
+        <div class="feedback-header">
+            <i class="bi bi-chat-dots-fill" style="font-size: 3rem; color: #c9a03d;"></i>
             <h1>We Value Your Feedback</h1>
             <p>Help us improve Terravast by sharing your experience.</p>
+        </div>
 
-            <!-- Feedback form submits to acknowledgement.html -->
-            <form action="acknowledgement.html" method="GET">
-                <div>
-                    <label>Your Full Name *</label>
-                    <input type="text" name="fullname" required>
+        <div class="feedback-form-container">
+            <form id="feedbackForm" class="feedback-form" onsubmit="return handleFeedbackSubmit(event)">
+                <div class="form-group">
+                    <label>Your Full Name <span class="required">*</span></label>
+                    <input type="text" id="feedbackName" name="fullname" required>
                 </div>
 
-                <div>
-                    <label>Email Address *</label>
-                    <input type="email" name="email" required>
+                <div class="form-group">
+                    <label>Email Address <span class="required">*</span></label>
+                    <input type="email" id="feedbackEmail" name="email" required>
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label>How would you rate your experience?</label>
-                    <select name="rating">
-                        <option>★★★★★ - Excellent</option>
-                        <option>★★★★☆ - Good</option>
-                        <option>★★★☆☆ - Average</option>
-                        <option>★★☆☆☆ - Fair</option>
-                        <option>★☆☆☆☆ - Poor</option>
-                    </select>
+                    <div class="rating-container">
+                        <div class="stars" id="starRating">
+                            <i class="bi bi-star-fill star" data-rating="1"></i>
+                            <i class="bi bi-star-fill star" data-rating="2"></i>
+                            <i class="bi bi-star-fill star" data-rating="3"></i>
+                            <i class="bi bi-star-fill star" data-rating="4"></i>
+                            <i class="bi bi-star-fill star" data-rating="5"></i>
+                        </div>
+                        <div class="rating-value" id="ratingValue">
+                            <span>★★★★★</span> - Excellent
+                        </div>
+                        <input type="hidden" id="ratingInput" name="rating" value="5">
+                    </div>
                 </div>
 
-                <div>
-                    <label>Your Feedback *</label>
-                    <textarea name="message" rows="5" required placeholder="Tell us what you think..."></textarea>
+                <div class="form-group">
+                    <label>Feedback Type (Optional)</label>
+                    <div class="feedback-types" id="feedbackTypes">
+                        <button type="button" class="feedback-type-btn" data-type="General">General</button>
+                        <button type="button" class="feedback-type-btn" data-type="Bug Report">Bug Report</button>
+                        <button type="button" class="feedback-type-btn" data-type="Feature Request">Feature Request</button>
+                        <button type="button" class="feedback-type-btn" data-type="Complaint">Complaint</button>
+                        <button type="button" class="feedback-type-btn" data-type="Praise">Praise</button>
+                    </div>
+                    <input type="hidden" id="feedbackTypeInput" name="feedbackType" value="">
                 </div>
 
-                <button type="submit">Submit Feedback</button>
-                <p>* Required fields</p>
+                <div class="form-group">
+                    <label>Your Feedback <span class="required">*</span></label>
+                    <textarea id="feedbackMessage" name="message" rows="5" required placeholder="Tell us what you think..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="bi bi-send-fill"></i> Submit Feedback
+                </button>
+                <p class="required-note">* Required fields</p>
             </form>
-        </section>
-    </main>
+        </div>
+        
+        <div class="testimonials-section">
+            <h3><i class="bi bi-quote"></i> What Our Customers Say</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars-mini">★★★★★</div>
+                    <p>"Terravast made finding land in Gaborone so easy! The listings were verified and the process was smooth."</p>
+                    <h4>- Keitumetse M.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars-mini">★★★★★</div>
+                    <p>"I listed my family plot and got a buyer within 2 weeks. Highly recommend their platform!"</p>
+                    <h4>- Thabo K.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars-mini">★★★★☆</div>
+                    <p>"Great customer support. They helped me understand the legal requirements for tribal land."</p>
+                    <h4>- Neo D.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
-    </footer>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Terravast Holdings</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Buying Guide</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <div class="newsletter-form">
+                    <input type="email" id="newsletterEmail" placeholder="Your email address">
+                    <button onclick="subscribeNewsletter(this)">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Acknowledgement Modal -->
+<div id="acknowledgementModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <i class="bi bi-check-circle-fill"></i>
+        <h2>Thank You!</h2>
+        <p id="modalMessage">Your feedback has been successfully submitted! We appreciate your input.</p>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- Additional script for star rating on feedback page -->
+<script>
+    // Star rating functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('#starRating .star');
+        const ratingValueDiv = document.getElementById('ratingValue');
+        const ratingInput = document.getElementById('ratingInput');
+        
+        const ratingTexts = {
+            1: '★☆☆☆☆ - Poor',
+            2: '★★☆☆☆ - Fair',
+            3: '★★★☆☆ - Average',
+            4: '★★★★☆ - Good',
+            5: '★★★★★ - Excellent'
+        };
+        
+        function setRating(rating) {
+            stars.forEach((star, index) => {
+                const starRating = parseInt(star.dataset.rating);
+                if (starRating <= rating) {
+                    star.classList.add('selected');
+                    star.style.color = '#f9b23f';
+                } else {
+                    star.classList.remove('selected');
+                    star.style.color = '#ddd';
+                }
+            });
+            ratingValueDiv.innerHTML = `<span>${'★'.repeat(rating)}${'☆'.repeat(5-rating)}</span> - ${ratingTexts[rating]}`;
+            ratingInput.value = rating;
+        }
+        
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = parseInt(this.dataset.rating);
+                setRating(rating);
+            });
+            
+            star.addEventListener('mouseenter', function() {
+                const rating = parseInt(this.dataset.rating);
+                stars.forEach((s, idx) => {
+                    const sRating = parseInt(s.dataset.rating);
+                    if (sRating <= rating) {
+                        s.style.color = '#f9b23f';
+                    } else {
+                        s.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+        
+        document.getElementById('starRating').addEventListener('mouseleave', function() {
+            const currentRating = parseInt(ratingInput.value) || 5;
+            stars.forEach((star, idx) => {
+                const starRating = parseInt(star.dataset.rating);
+                if (starRating <= currentRating) {
+                    star.style.color = '#f9b23f';
+                } else {
+                    star.style.color = '#ddd';
+                }
+            });
+        });
+        
+        // Feedback type buttons
+        const typeBtns = document.querySelectorAll('.feedback-type-btn');
+        const feedbackTypeInput = document.getElementById('feedbackTypeInput');
+        
+        typeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                typeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                feedbackTypeInput.value = this.dataset.type;
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
