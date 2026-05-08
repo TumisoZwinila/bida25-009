@@ -190,19 +190,19 @@ body {
 
 .slide1 { 
     background: linear-gradient(rgba(45,74,44,0.5), rgba(61,43,26,0.5)), 
-                url('https://images.unsplash.com/photo-1547471080-7cc2caa01e6e?w=1600&h=800&fit=crop');
+                url("images\slide1.jpg");
     background-size: cover;
     background-position: center;
 }
 .slide2 { 
     background: linear-gradient(rgba(45,74,44,0.5), rgba(61,43,26,0.5)), 
-                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&h=800&fit=crop');
+                url("images\slide2.jpeg"');
     background-size: cover;
     background-position: center;
 }
 .slide3 { 
     background: linear-gradient(rgba(45,74,44,0.5), rgba(61,43,26,0.5)), 
-                url('https://images.unsplash.com/photo-1578916171722-19a2e2ec6ebd?w=1600&h=800&fit=crop');
+                url("images\slide3.jpeg");
     background-size: cover;
     background-position: center;
 }
