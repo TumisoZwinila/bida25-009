@@ -2,21 +2,198 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terravast Land Market Place</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Terravast - Botswana's Premier Land Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional mobile-responsive styles for homepage */
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #f0e6d2;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+            
+            .nav-wrapper {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: #2d4a2c;
+                z-index: 1000;
+                transition: right 0.3s ease;
+                padding: 80px 20px 20px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-wrapper.active {
+                right: 0;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+            }
+            
+            .nav-menu li a {
+                display: block;
+                padding: 10px 0;
+                font-size: 18px;
+            }
+            
+            .btn-primary {
+                display: inline-block;
+                text-align: center;
+            }
+            
+            /* Overlay for mobile menu */
+            .menu-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+            
+            .menu-overlay.active {
+                display: block;
+            }
+        }
+        
+        /* Slideshow touch improvements */
+        .slideshow-container {
+            touch-action: pan-y pinch-zoom;
+        }
+        
+        /* Feature icons */
+        .feature i {
+            font-size: 3rem;
+            color: #c9a03d;
+            margin-bottom: 1rem;
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            color: #c9a03d;
+            margin-bottom: 1rem;
+        }
+        
+        /* Search section improvements */
+        .search-card {
+            background: #fff8f0;
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(61,43,26,0.15);
+            border: 1px solid #c9a03d;
+        }
+        
+        .search-card h2 {
+            color: #2d4a2c;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .search-card {
+                padding: 25px;
+            }
+            
+            .search-card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-stats {
+                bottom: 20px;
+                gap: 10px;
+            }
+            
+            .stat-card {
+                padding: 10px 15px;
+            }
+            
+            .stat-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .features {
+                padding: 40px 15px;
+                gap: 20px;
+            }
+            
+            .steps {
+                gap: 20px;
+                padding: 0 15px;
+            }
+        }
+    </style>
 </head>
 <body>
    <header class="header">
     <div class="header-container">
+        <button class="hamburger-menu" onclick="toggleMobileMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
         <a href="index.html" class="logo">
-            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" width="150" height="100">
+            <img src="images/logo.jpeg" alt="Terravast Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x60?text=Terravast'">
         </a>
         
         <div class="nav-wrapper">
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="about.html">About</a></li>
@@ -25,7 +202,9 @@
             </ul>
         </div>
     </div>
+    <div class="menu-overlay" onclick="closeMobileMenu()"></div>
 </header>
+
 <main>
    <section class="hero">
     <div class="slideshow-container">
@@ -63,88 +242,170 @@
         </div>
     </div>
 </section>
+
     <section class="features">
         <div class="feature">
+            <i class="bi bi-check-circle-fill"></i>
             <h2>Verified Listings</h2>
             <p>All properties are verified for authenticity and legal compliance.</p>
         </div>
         <div class="feature">
+            <i class="bi bi-arrow-left-right"></i>
             <h2>We sell and buy land</h2>
             <p>Connect with verified sellers and buyers for a secure transaction.</p>
         </div>
         <div class="feature">
-         <h2>Nationwide Coverage</h2>
-            <p>From Gaborone  to remote villages, we operate across Botswana.</p>
+            <i class="bi bi-geo-alt-fill"></i>
+            <h2>Nationwide Coverage</h2>
+            <p>From Gaborone to remote villages, we operate across Botswana.</p>
         </div>
     </section>
     
-    <section class="search section">
-    <div class="container">
-        <div class="search card">
-            <h2>Find Your Perfect Land in Botswana</h2>
-            <form id="searchForm" class="search form" onsubmit="return false;">
-                <div class="form group">
-                    <label>District/Village</label>
-                    <input type="text" id="searchDistrict" placeholder="e.g Gaborone, Francistown, Maun">
-                </div>
-                <div class="form group">
-                    <label>Land Type</label>
-                    <select id="searchType">
-                        <option value="">Select Land Type</option>
-                        <option value="residential">Residential</option>
-                        <option value="commercial">Commercial</option>
-                        <option value="tribal">Tribal Land</option>
-                        <option value="freehold">Freehold</option>
-                        <option value="agricultural">Agricultural</option>
-                    </select>
-                </div>
-                <div class="form group">
-                    <label>Price Range</label>
-                    <select id="searchPrice">
-                        <option value="any">Any Price</option>
-                        <option value="0-300000">Under P300,000</option>
-                        <option value="300001-600000">P300k - P600k</option>
-                        <option value="600001-1000000">P600k - P1M</option>
-                        <option value="1000001+">P1M+</option>
-                    </select>
-                </div>
-                <button type="button" class="btn-search" onclick="performSearch()">Search Properties</button>
-            </form>
-            <div id="searchResultsMessage" style="margin-top:15px; text-align:center;"></div>
+    <section class="search-section">
+        <div class="container">
+            <div class="search-card">
+                <h2><i class="bi bi-search"></i> Find Your Perfect Land in Botswana</h2>
+                <form id="searchForm" class="search-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <label><i class="bi bi-geo-alt"></i> District/Village</label>
+                        <input type="text" id="searchDistrict" placeholder="e.g., Gaborone, Francistown, Maun">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="bi bi-tag"></i> Land Type</label>
+                        <select id="searchType">
+                            <option value="">Select Land Type</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="tribal">Tribal Land</option>
+                            <option value="freehold">Freehold</option>
+                            <option value="agricultural">Agricultural</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="bi bi-cash-stack"></i> Price Range</label>
+                        <select id="searchPrice">
+                            <option value="any">Any Price</option>
+                            <option value="0-300000">Under P300,000</option>
+                            <option value="300001-600000">P300k - P600k</option>
+                            <option value="600001-1000000">P600k - P1M</option>
+                            <option value="1000001+">P1M+</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-search" onclick="performSearch()">
+                        <i class="bi bi-search"></i> Search Properties
+                    </button>
+                </form>
+                <div id="searchResultsMessage" style="margin-top:15px; text-align:center;"></div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    
     <section class="how-it-works">
         <div class="container">
             <h2>Simple. Secure. Structured.</h2>
-            <p>How It Works</p>
-        </div>
+            <p class="subtitle">How It Works</p>
             <div class="steps">
                 <div class="step">
-                    <i class="step-num"></i>
+                    <div class="step-icon"><i class="bi bi-file-text-fill"></i></div>
                     <h3>List Your Land</h3>
                     <p>Sellers can list their land for sale on our platform.</p>
                 </div>
                 <div class="step">
-                    <i class="step-num"></i>
+                    <div class="step-icon"><i class="bi bi-chat-dots-fill"></i></div>
                     <h3>Connect</h3>
                     <p>Get in touch with verified sellers and buyers.</p>
                 </div>
                 <div class="step">
-                    <i class="step-num"></i>
+                    <div class="step-icon"><i class="bi bi-shield-check-fill"></i></div>
                     <h3>Seamless Transactions</h3>
                     <p>Complete the transaction securely.</p>
                 </div>
             </div>
         </div>
     </section>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Terravast Holdings</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Buying Guide</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <div class="newsletter-form">
+                    <input type="email" id="newsletterEmail" placeholder="Your email address">
+                    <button onclick="subscribeNewsletter(this)">Subscribe</button>
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Terravast Holdings Pty Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Acknowledgement Modal -->
+<div id="acknowledgementModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <i class="bi bi-check-circle-fill"></i>
+        <h2>Thank You!</h2>
+        <p id="modalMessage">Your submission has been received!</p>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- Additional mobile menu script -->
+<script>
+    function toggleMobileMenu() {
+        const navWrapper = document.querySelector('.nav-wrapper');
+        const hamburger = document.querySelector('.hamburger-menu');
+        const overlay = document.querySelector('.menu-overlay');
+        
+        navWrapper.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
+        
+        if (navWrapper.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+    
+    function closeMobileMenu() {
+        const navWrapper = document.querySelector('.nav-wrapper');
+        const hamburger = document.querySelector('.hamburger-menu');
+        const overlay = document.querySelector('.menu-overlay');
+        
+        navWrapper.classList.remove('active');
+        hamburger.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+</script>
+
 </body>
 </html>
